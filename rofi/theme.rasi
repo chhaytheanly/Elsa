@@ -1,0 +1,75 @@
+/* --- Global Variables --- */
+* {
+    bg-col:  #1e1e2e;
+    bg-col-light: #313244;
+    border-col: #89b4fa;
+    selected-col: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f38ba8;
+    
+    font: "JetBrains Mono 12";
+    background-color: transparent;
+    text-color: @fg-col;
+}
+
+/* --- Main Window --- */
+window {
+    width: 35%;
+    background-color: @bg-col;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* --- Input Bar (Search) --- */
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg-col-light;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0px 0px 15px 0px;
+}
+
+prompt {
+    text-color: @fg-col2;
+    padding: 0px 10px 0px 0px;
+    font: "JetBrains Mono Bold 12";
+}
+
+entry {
+    placeholder: "Search Apps...";
+    text-color: @fg-col;
+}
+
+/* --- App List --- */
+listview {
+    lines: 7;
+    columns: 1;
+    spacing: 8px;
+    border: 0px;
+}
+
+element {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+element-icon {
+    size: 24px;
+    padding: 0px 10px 0px 0px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+/* --- Selected Item --- */
+element selected {
+    background-color: @selected-col;
+}
+
+element-text selected {
+    text-color: #11111b; /* Dark text for contrast */
+}

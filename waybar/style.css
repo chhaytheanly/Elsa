@@ -1,0 +1,155 @@
+@define-color dark-bg  #11111b;
+@define-color hover-bg #313244;
+@define-color accent   #ff9b71;
+@define-color fg       #cdd6f4;
+
+* {
+    font-family: "Cascadia Code", "FiraCode Nerd Font Propo", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    min-height: 0;
+}
+
+tooltip {
+    background: @dark-bg;
+    border-radius: 15px;
+    border: 1px solid @accent;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 5px;
+}
+
+window#waybar {
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    margin: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    margin: 5px;
+}
+
+#workspaces {
+    background-color: @dark-bg;
+    margin: 2px 4px;
+    padding: 0 5px;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+#workspaces button {
+    color: @fg;
+    background-color: transparent;
+    margin: 6px 3px;
+    padding: 0 12px;
+    border-radius: 24px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background-color: @hover-bg;
+    color: @fg;
+}
+
+#workspaces button.active {
+    background-color: @accent;
+    color: @dark-bg;
+    min-width: 30px;
+}
+
+#workspaces button.urgent {
+    color: #ff0000;
+    background-color: #f9e2af;
+}
+
+#workspaces button.empty {
+    color: #6c7086;
+}
+
+#custom-launcher,
+#window,
+#cpu,
+#battery,
+#network,
+#pulseaudio,
+#tray,
+#clock,
+#custom-power {
+    background-color: @dark-bg;
+    color: @fg;
+    margin: 4px;
+    padding: 6px 22px;
+    border-radius: 24px;
+    opacity: 0.9;
+}
+
+#custom-launcher {
+    color: @accent;
+    padding: 0 14px;
+    font-size: 18px;
+}
+
+#window {
+    margin: 4px 6px;
+}
+
+#clock {
+    font-weight: 800;
+}
+
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#clock:hover {
+    background-color: @hover-bg;
+    color: @accent;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #a6e3a1;
+}
+
+#battery.warning {
+    color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f38ba8;
+    color: @dark-bg;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-power {
+    color: @accent;
+}
+
+#custom-power:hover {
+    background-color: @hover-bg;
+    color: #f38ba8;
+}
+
+@keyframes blink {
+    to {
+        background-color: @fg;
+        color: #f38ba8;
+    }
+}
