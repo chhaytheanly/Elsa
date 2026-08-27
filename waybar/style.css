@@ -1,155 +1,183 @@
-@define-color dark-bg  #11111b;
-@define-color hover-bg #313244;
-@define-color accent   #ff9b71;
-@define-color fg       #cdd6f4;
+/* ──────────────────────────────────────────────────────────────────────────
+   °˖* ૮(  • ᴗ ｡)っ🍸  pewd / dionysus hyprland waybar style
+   Nord-inspired with radioactive cyan glow
+   ────────────────────────────────────────────────────────────────────────── */
 
 * {
-    font-family: "Cascadia Code", "FiraCode Nerd Font Propo", sans-serif;
-    font-size: 17px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    min-height: 0;
-}
-
-tooltip {
-    background: @dark-bg;
-    border-radius: 15px;
-    border: 1px solid @accent;
-}
-
-tooltip label {
-    color: @fg;
-    padding: 5px;
+  font-family: "JetBrainsMono Nerd Font", "Cascadia Code", "FiraCode Nerd Font Propo", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px; 
+  min-height: 0;
 }
 
 window#waybar {
-    background-color: transparent;
-    transition-property: background-color;
-    transition-duration: 0.5s;
-    margin: 10px;
+  background-color: #282c34;
+  color: #9cdef2;
+  border-top: 3px solid #61afef;
+  border-left: 3px solid #56b6c2;
+  border-right: 3px solid #56b6c2;
+  border-radius: 6px;
+  opacity: 0.95;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  margin: 8px 12px;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
-}
-
-.modules-left,
-.modules-center,
-.modules-right {
-    background: transparent;
-    margin: 5px;
-}
-
-#workspaces {
-    background-color: @dark-bg;
-    margin: 2px 4px;
-    padding: 0 5px;
-    border-radius: 20px;
-    opacity: 0.9;
-}
-
-#workspaces button {
-    color: @fg;
-    background-color: transparent;
-    margin: 6px 3px;
-    padding: 0 12px;
-    border-radius: 24px;
-    transition: all 0.3s ease;
-}
-
-#workspaces button:hover {
-    background-color: @hover-bg;
-    color: @fg;
-}
-
-#workspaces button.active {
-    background-color: @accent;
-    color: @dark-bg;
-    min-width: 30px;
-}
-
-#workspaces button.urgent {
-    color: #ff0000;
-    background-color: #f9e2af;
-}
-
-#workspaces button.empty {
-    color: #6c7086;
+  opacity: 0.2;
 }
 
 #custom-launcher,
+#workspaces,
 #window,
 #cpu,
+#backlight,
+#language,
 #battery,
 #network,
 #pulseaudio,
 #tray,
 #clock,
 #custom-power {
-    background-color: @dark-bg;
-    color: @fg;
-    margin: 4px;
-    padding: 6px 22px;
-    border-radius: 24px;
-    opacity: 0.9;
+  padding: 4px 10px;
+  margin: 4px 4px;
+  background-color: #292d35;
+  border: 2px solid #61afef; 
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
 }
 
 #custom-launcher {
-    color: @accent;
-    padding: 0 14px;
-    font-size: 18px;
+  color: #56b6c2;
+  border-color: #56b6c2;
+  font-size: 16px;
+  padding: 4px 12px;
+}
+
+#custom-launcher:hover {
+  background-color: #56b6c2;
+  color: #2e3440;
+}
+
+
+#workspaces {
+  background-color: transparent;
+  border: none;
+  padding: 0 4px;
+}
+
+#workspaces button {
+  all: initial;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: bold;
+  min-width: 0;
+  padding: 4px 8px;
+  margin: 4px 3px;
+  border-radius: 4px;
+  background-color: #2e3440;
+  color: #56b6c2;
+  border: 1px solid #3b4252;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+  color: #2e3440;
+  background-color: #56b6c2;
+  border-color: #56b6c2;
+}
+
+#workspaces button:hover {
+  color: #2e3440;
+  background-color: #61afef;
+}
+
+#workspaces button.urgent {
+  background-color: #bf616a;
+  color: #ffffff;
+}
+
+#workspaces button.empty {
+  color: #4c566a;
+  border-color: transparent;
 }
 
 #window {
-    margin: 4px 6px;
+  color: #fab387; 
+  border-color: #fab387;
 }
 
 #clock {
-    font-weight: 800;
+  color: #fab387;
+  border-color: #fab387;
 }
 
+#language:hover,
 #cpu:hover,
-#memory:hover,
+#backlight:hover,
 #network:hover,
 #pulseaudio:hover,
 #battery:hover,
-#clock:hover {
-    background-color: @hover-bg;
-    color: @accent;
+#clock:hover,
+#custom-power:hover,
+#tray:hover {
+  background-color: #4c566a;
+  border-color: #56b6c2;
+  color: #56b6c2;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #a6e3a1;
+  color: #a3be8c; /* Nord green */
+  border-color: #a3be8c;
 }
 
 #battery.warning {
-    color: #f9e2af;
+  color: #fab387;
+  border-color: #fab387;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f38ba8;
-    color: @dark-bg;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: #bf616a; /* Nord red */
+  color: #ffffff;
+  border-color: #bf616a;
+  animation-name: blink-critical;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #custom-power {
-    color: @accent;
+  color: #e06c75;
+  border-color: #e06c75;
 }
 
 #custom-power:hover {
-    background-color: @hover-bg;
-    color: #f38ba8;
+  background-color: #e06c75;
+  color: #2e3440;
+  border-color: #e06c75;
 }
 
-@keyframes blink {
-    to {
-        background-color: @fg;
-        color: #f38ba8;
-    }
+tooltip {
+  color: #56b6c2;
+  background-color: #3b4252;
+  border: 1px solid #56b6c2;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+tooltip label {
+  color: #78bec7;
+  padding: 4px;
+}
+
+@keyframes blink-critical {
+  to {
+    background-color: #ffffff;
+    color: #bf616a;
+    border-color: #ffffff;
+  }
 }

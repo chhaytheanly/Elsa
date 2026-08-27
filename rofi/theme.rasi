@@ -1,75 +1,95 @@
-/* --- Global Variables --- */
+/* ── Rofi Theme ──────────────────────────────
+   °˖* ૮(  • ᴗ ｡)っ🍸  
+   ─────────────────────────────────────────── */
+
 * {
-    bg-col:  #1e1e2e;
-    bg-col-light: #313244;
-    border-col: #89b4fa;
-    selected-col: #89b4fa;
-    fg-col: #cdd6f4;
-    fg-col2: #f38ba8;
-    
-    font: "JetBrains Mono 12";
-    background-color: transparent;
-    text-color: @fg-col;
+  font: "JetBrainsMono Nerd Font 11";
+  blur: true;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 0px;  // remove default rounding globally
 }
 
-/* --- Main Window --- */
 window {
-    width: 35%;
-    background-color: @bg-col;
-    border: 2px;
-    border-color: @border-col;
-    border-radius: 12px;
-    padding: 20px;
+  width: 750px;
+  height: 625px;
+  location: center;
+  blur: true;
+  border: 2px;
+  border-radius: 3px;
+  border-color: #61afef;
+  background-color: transparent;  // let Hyprland handle opacity
+  padding: 0px;
+  margin: 30px 50px;
 }
 
-/* --- Input Bar (Search) --- */
-inputbar {
-    children: [prompt, entry];
-    background-color: @bg-col-light;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 0px 0px 15px 0px;
+/* ── Layout ──────────────────────────────── */
+mainbox {
+  orientation: horizontal;
+  children: [ "borderbox" ];
+  spacing: 0px;
+  padding: 0px;
 }
 
-prompt {
-    text-color: @fg-col2;
-    padding: 0px 10px 0px 0px;
-    font: "JetBrains Mono Bold 12";
+borderbox {
+  orientation: horizontal;
+  children: [ "imagebox", "contentbox" ];
+  padding: 0px;
+  spacing: 0px;
+  border-radius: 3px;
 }
 
-entry {
-    placeholder: "Search Apps...";
-    text-color: @fg-col;
+contentbox {
+  orientation: vertical;
+  children: [ "entry", "listview" ];
+  spacing: 0px;
+  padding: 0px;
+  expand: true;
 }
 
-/* --- App List --- */
-listview {
-    lines: 7;
-    columns: 1;
-    spacing: 8px;
-    border: 0px;
+/* ── Imagebox ────────────────────────────── */
+imagebox {
+  background-image: url("~/.config/rofi/image.png");
+  background-repeat: false;
+  size: 300px 625px;
 }
 
 element {
-    padding: 10px;
-    border-radius: 8px;
-    background-color: transparent;
+  border-radius: 0px;
 }
 
-element-icon {
-    size: 24px;
-    padding: 0px 10px 0px 0px;
+element-text, element-icon {
+  padding: 6px 8px;
+  spacing: 2px;
+  text-color: #fab387;
 }
 
-element-text {
-    vertical-align: 0.5;
-}
-
-/* --- Selected Item --- */
 element selected {
-    background-color: @selected-col;
+  background-color: #191919;
+  text-color: #e5c07b;
+  border-radius: 3px;
 }
 
-element-text selected {
-    text-color: #11111b; /* Dark text for contrast */
+prompt {
+  enabled: false;
+  background-color: transparent;
+  text-color: #61afef;
+  padding: 5px 10px;
+}
+
+entry {
+  padding: 8px;
+  expand: false;
+  font: "JetBrainsMono Nerd Font 12";
+  text-color: #fab387;
+  border-radius: 0px 3px 0px 0px;
+  background-color: #292e36;  // input field
+}
+
+
+listview {
+  lines: 1;
+  background-color: rgba(46, 52, 64, 0.8); // solid background inside blur
+  border-radius: 0px 0px 3px 0px;
+  padding: 5px;
 }

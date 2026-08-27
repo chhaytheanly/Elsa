@@ -5,42 +5,51 @@
     "height": 0,
     "reload_style_on_change": true,
 
-    // Left: launcher, workspaces, active window
     "modules-left": [
         "custom/launcher",
         "hyprland/workspaces",
         "hyprland/window"
     ],
-    // Center: clock
+
     "modules-center": [
         "clock"
     ],
-    // Right: tray, network, cpu, audio, battery, power
+
     "modules-right": [
         "tray",
+        "hyprland/language",
         "cpu",
+        "backlight",
         "pulseaudio",
         "battery",
         "network",
         "custom/power"
     ],
 
-    // Launcher icon -> rofi
     "custom/launcher": {
-        "format": "󰘳 ",
+        "format": " ",
         "on-click": "rofi -show drun",
         "tooltip": false
     },
 
-    // Workspaces: number-only pills
     "hyprland/workspaces": {
         "format": "{icon}",
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " ",
+            "urgent": " ",
+            "active": " ",
+            "default": " "
+        },
         "sort-by-number": true,
         "active-only": false,
         "all-outputs": false,
         "on-click": "activate",
         "disable-scroll": false,
-        "persistent_workspaces": {
+        "persistent-workspaces": {
             "1": [],
             "2": [],
             "3": [],
@@ -49,14 +58,12 @@
         }
     },
 
-    // Active window title
     "hyprland/window": {
-        "format": "{title}",
+        "format": "[{title}]",
         "max-length": 40,
         "separate-outputs": true
     },
 
-    // Clock: day + time
     "clock": {
         "format": "{:%a %H:%M}",
         "format-alt": "{:%d %B %Y}",
@@ -64,7 +71,6 @@
         "tooltip-format": "{:%A, %d %B %Y  %H:%M}"
     },
 
-    // CPU
     "cpu": {
         "interval": 5,
         "format": "{usage}% 󰍛",
@@ -72,12 +78,11 @@
         "tooltip-format": "CPU: {usage}%  Load: {load}"
     },
 
-    // Network
     "network": {
         "format-wifi": "{icon}",
         "format-ethernet": "{ifname} 󰀂",
         "format-disconnected": "󰖪",
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\nIP: {ipaddr}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "IP: {ipaddr}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-disconnected": "Disconnected",
@@ -86,26 +91,39 @@
         "on-click": "alacritty -e nmtui"
     },
 
-    // Audio
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-muted": "󰝟 {volume}%",
         "format-icons": {
-            "default": ["", "", ""]
+            "default": [" ", " ", " "]
         },
         "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "scroll-step": 5,
         "tooltip-format": "{volume}% | {desc}"
     },
 
-    // Battery
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃊 ", "󰃝 ", "󰃟 ", "󰃠 "],
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip": true
+    },
+
+    "hyprland/language": {
+        "format": "{short}",
+        "format-us": "EN",
+        "format-kh": "KH",
+        "tooltip": false
+    },
+
     "battery": {
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󰢜",
         "format-plugged": "{capacity}% 󰂄",
         "format-full": "{capacity}% 󰂅",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "interval": 5,
+        "interval": 5,    
         "states": {
             "warning": 20,
             "critical": 10
@@ -113,17 +131,15 @@
         "tooltip-format": "{capacity}%  {time}"
     },
 
-    // System tray
     "tray": {
         "icon-size": 16,
         "spacing": 12,
         "show-passive": false
     },
 
-    // Power menu -> rofi
     "custom/power": {
         "format": "󰐥 ",
-        "on-click": "~/.config/waybar/rofi-power.sh",
+        "on-click": "/mnt/d/dotfile/hypr/scripts/powermenu.sh",
         "tooltip": false
     }
 }
