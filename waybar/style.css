@@ -13,13 +13,12 @@
 }
 
 window#waybar {
-  background-color: #282c34;
+  background-color: transparent;
   color: #9cdef2;
   border-top: 3px solid #61afef;
   border-left: 3px solid #56b6c2;
   border-right: 3px solid #56b6c2;
   border-radius: 6px;
-  opacity: 0.95;
   transition-property: background-color;
   transition-duration: 0.3s;
   margin: 8px 12px;
