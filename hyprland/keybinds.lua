@@ -7,10 +7,10 @@ hl.config({
 local mod = "SUPER"
 
 -- Terminal: Alacritty
-hl.bind(mod .. " + Return", hl.dsp.exec_cmd("kitty"))
+hl.bind(mod .. " + Return", hl.dsp.exec_cmd("alacritty"))
 
 -- Launcher
-hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd("rofi -show drun -show-icons"))
+hl.bind(mod .. " + SPACE" , hl.dsp.exec_cmd("rofi -show drun -show-icons"))
 
 -- Window management
 hl.bind(mod .. " + Q", hl.dsp.window.close())

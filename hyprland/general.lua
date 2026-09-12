@@ -3,7 +3,7 @@ hl.monitor({
     output   = "eDP-1",
     mode     = "preferred",
     position = "auto",
-    scale    = 1.07,
+    scale    = 1.25,
 })
 
 -- INPUT
@@ -24,12 +24,15 @@ hl.config({
 -- LOOK AND FEEL
 hl.config({
     general = {
-        layout     = "dwindle",
-        gaps_in    = 4,
-        gaps_out   = 8,
-        border_size = 2,
+        layout                  = "dwindle",
+        gaps_in                 = 4,
+        gaps_out                = 8,
+        border_size             = 2,
+        resize_on_border        = true,
+        extend_border_grab_area = 10,
+        hover_icon_on_border    = true,
         col = {
-            active_border   = "rgba(47474877)",
+            active_border   = "#02b3ff",
             inactive_border = "rgba(1b1c1d33)",
         },
     },

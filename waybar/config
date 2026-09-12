@@ -88,7 +88,7 @@
         "tooltip-format-disconnected": "Disconnected",
         "interval": 3,
         "nospacing": 1,
-        "on-click": "alacritty -e nmtui"
+        "on-click": "~/.config/hypr/scripts/wifi.sh"
     },
 
     "pulseaudio": {
@@ -139,7 +139,7 @@
 
     "custom/power": {
         "format": "󰐥 ",
-        "on-click": "/mnt/d/dotfile/hypr/scripts/powermenu.sh",
+        "on-click": "~/.config/hypr/scripts/powermenu.sh",
         "tooltip": false
     }
 }
