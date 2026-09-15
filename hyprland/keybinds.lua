@@ -51,8 +51,8 @@ hl.bind(mod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Notification DND toggle
-hl.bind(mod .. " + N", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/toggle-dnd.sh"))
+-- Notification Swaync
+hl.bind(mod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
 -- Screenshot
 hl.bind("Print", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | wl-copy'"))
