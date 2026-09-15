@@ -15,7 +15,7 @@ case "$chosen" in
         hyprlock
         ;;
     "Logout")
-        confirm "Logout" && hyprctl dispatch exit
+        confirm "Logout" && hyprctl dispatch "hl.dsp.exit()"
         ;;
     "Suspend")
         systemctl suspend

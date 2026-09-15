@@ -18,6 +18,7 @@
     "modules-right": [
         "tray",
         "hyprland/language",
+        "memory",
         "cpu",
         "backlight",
         "pulseaudio",
@@ -27,7 +28,7 @@
     ],
 
     "custom/launcher": {
-        "format": " ",
+        "format": "󰣇 ",
         "on-click": "rofi -show drun",
         "tooltip": false
     },
@@ -69,6 +70,12 @@
         "format-alt": "{:%d %B %Y}",
         "interval": 10,
         "tooltip-format": "{:%A, %d %B %Y  %H:%M}"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "{used:0.1f}/{total:0.1f}GB  ",
+        "tooltip-format": "Memory: {used:0.2f}%  Used: {usedMem}  Free: {freeMem}"
     },
 
     "cpu": {

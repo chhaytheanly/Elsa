@@ -22,6 +22,7 @@ hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mod .. " + SHIFT + E", hl.dsp.exit())
 hl.bind(mod .. " + CTRL + R", hl.dsp.exec_cmd("hyprctl reload"))
 hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd("killall waybar; waybar -c ~/.config/hypr/waybar/config -s ~/.config/hypr/waybar/style.css &"))
+hl.bind(mod .. " + SHIFT + C", hl.dsp.exec_cmd("pkill waybar"))
 
 -- Focus movement
 hl.bind(mod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -49,6 +50,9 @@ hl.bind(mod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 -- Mouse move/resize
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- Notification DND toggle
+hl.bind(mod .. " + N", hl.dsp.exec_cmd("sh ~/.config/hypr/scripts/toggle-dnd.sh"))
 
 -- Screenshot
 hl.bind("Print", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | wl-copy'"))

@@ -1,12 +1,22 @@
--- MONITORS
+-- Monitor Configuration
+
+-- Main monitor
 hl.monitor({
     output   = "eDP-1",
     mode     = "preferred",
-    position = "auto",
+    position = "auto-right",
     scale    = 1.25,
 })
 
--- INPUT
+-- Secondary monitor
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "preferred",
+    position = "auto-left",
+    scale    = 1.0,
+})
+
+-- Input
 hl.config({
     input = {
         kb_layout  = "us, kh",
@@ -21,7 +31,7 @@ hl.config({
     },
 })
 
--- LOOK AND FEEL
+-- Look and Feel
 hl.config({
     general = {
         layout                  = "dwindle",
@@ -37,7 +47,7 @@ hl.config({
         },
     },
     decoration = {
-        rounding = 8,
+        rounding = 0,
         blur = {
             enabled = true,
             size    = 3,
@@ -45,7 +55,7 @@ hl.config({
         },
     },
     animations = {
-        enabled = true,
+        enabled = false,
     },
     misc = {
         disable_hyprland_logo = true,
@@ -55,7 +65,7 @@ hl.config({
     },
 })
 
--- LAYOUTS
+-- Layout Specific Configurations
 hl.config({
     dwindle = {
         preserve_split = true,
@@ -65,7 +75,7 @@ hl.config({
     },
 })
 
--- GESTURES
+-- Workspace Gestures
 hl.gesture({
     fingers   = 3,
     direction = "horizontal",
@@ -79,7 +89,7 @@ hl.config({
     },
 })
 
--- ANIMATIONS
+-- Animations
 hl.curve("myBezier", { type = "bezier", points = { {0.05, 0.9}, {0.1, 1.05} } })
 
 hl.animation({ leaf = "windows",    enabled = true, speed = 5, bezier = "myBezier" })
@@ -88,7 +98,7 @@ hl.animation({ leaf = "border",     enabled = true, speed = 8, bezier = "default
 hl.animation({ leaf = "fade",       enabled = true, speed = 5, bezier = "default" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 4, bezier = "default" })
 
--- WINDOW RULES
+-- Rules
 hl.window_rule({
     name  = "float-pavucontrol",
     match = { class = "^pavucontrol$" },
