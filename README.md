@@ -2,7 +2,27 @@
 
 Welcome to my personal dotfiles! This repository houses configurations for a Wayland-based setup primarily utilizing Hyprland (configured via Lua) along with a suite of complementary tools and scripts.
 
-## 📦 Requirements & Dependencies
+## Demo
+
+![Rofi](demo/image.png)
+
+This is my rofi configuration, I built the similiar to **Pewds's** rofi.
+
+![floating](demo/image-3.png)
+
+Here is the look of the floating windows.
+
+![Swaync](demo/image-1.png)
+
+I use swaync as the notification toggles.
+
+![Theme Rofi](demo/image-2.png)
+
+This includes theme awareness and you can choose using rofi.
+
+**Note**: All these set up, I mainly use that I want it to be minimalist as I can and no bloat.
+
+## ♨ Requirements & Dependencies
 
 To ensure these dotfiles work properly, you will need to install the following packages:
 
@@ -34,7 +54,7 @@ _(Note: There are additional scripts in `scripts/extra/` which may require optio
 
 ---
 
-## 🚀 Setup Instructions
+## 🗃 Setup Instructions
 
 Follow these step-by-step instructions to deploy these dotfiles onto your system:
 
