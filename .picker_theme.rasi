@@ -1,13 +1,13 @@
 * {
-    c-text: #c0caf5;
-    c-widget-bg: #24283b;
-    c-widget-bg-transparent: rgba(36, 40, 59, 0.85);
-    c-accent: #7aa2f7;
-    c-accent-alt: #bb9af7;
-    c-dim: #3b4261;
-    c-urgent: #f7768e;
-    c-dim-text: #565f89;
-    c-accent2: #e0af68;
+    c-text: #d3c6aa;
+    c-widget-bg: #2d353b;
+    c-widget-bg-transparent: rgba(45, 53, 59, 0.85);
+    c-accent: #a7c080;
+    c-accent-alt: #7fbbb3;
+    c-dim: #475258;
+    c-urgent: #e67e80;
+    c-dim-text: #56635f;
+    c-accent2: #e69875;
 }
 /* ── Rofi Theme ──────────────────────────────
    °˖* ૮(  • ᴗ ｡)っ🍸
