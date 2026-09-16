@@ -12,6 +12,15 @@ hl.bind(mod .. " + Return", hl.dsp.exec_cmd("alacritty"))
 -- Launcher
 hl.bind(mod .. " + SPACE" , hl.dsp.exec_cmd("rofi -show drun -show-icons"))
 
+-- Wallpaper selector
+hl.bind(mod .. " + W", hl.dsp.exec_cmd("sh -c '$HOME/.config/hypr/scripts/wallpaper.sh'"))
+
+-- Theme switcher (rofi picker)
+hl.bind(mod .. " + T", hl.dsp.exec_cmd("sh -c '$HOME/.config/hypr/scripts/theme-switcher.sh'"))
+
+-- Theme cycle
+hl.bind(mod .. " + SHIFT + T", hl.dsp.exec_cmd("sh -c '$HOME/.config/hypr/scripts/theme-switcher.sh --cycle'"))
+
 -- Window management
 hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen())

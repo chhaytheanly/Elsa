@@ -1,0 +1,11 @@
+* {
+    c-text: #c0caf5;
+    c-widget-bg: #24283b;
+    c-widget-bg-transparent: rgba(36, 40, 59, 0.85);
+    c-accent: #7aa2f7;
+    c-accent-alt: #bb9af7;
+    c-dim: #3b4261;
+    c-urgent: #f7768e;
+    c-dim-text: #565f89;
+    c-accent2: #e0af68;
+}

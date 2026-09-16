@@ -1,0 +1,10 @@
+@define-color c-text #c0caf5;
+@define-color c-widget-bg #24283b;
+@define-color c-widget-bg-transparent rgba(36, 40, 59, 0.85);
+@define-color c-accent #7aa2f7;
+@define-color c-accent-alt #bb9af7;
+@define-color c-dim #3b4261;
+@define-color c-urgent #f7768e;
+@define-color c-dim-text #565f89;
+@define-color c-accent2 #e0af68;
+@define-color c-hover-bg #414868;

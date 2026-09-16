@@ -42,8 +42,8 @@ hl.config({
         extend_border_grab_area = 10,
         hover_icon_on_border    = true,
         col = {
-            active_border   = "#02b3ff",
-            inactive_border = "rgba(1b1c1d33)",
+            active_border   = "#a7c080",
+            inactive_border = "rgba(2d353b66)",
         },
     },
     decoration = {
@@ -55,7 +55,7 @@ hl.config({
         },
     },
     animations = {
-        enabled = false,
+        enabled = true,
     },
     misc = {
         disable_hyprland_logo = true,

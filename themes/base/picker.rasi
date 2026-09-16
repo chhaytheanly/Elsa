@@ -1,14 +1,3 @@
-* {
-    c-text: #d3c6aa;
-    c-widget-bg: #2d353b;
-    c-widget-bg-transparent: rgba(45, 53, 59, 0.85);
-    c-accent: #a7c080;
-    c-accent-alt: #7fbbb3;
-    c-dim: #475258;
-    c-urgent: #e67e80;
-    c-dim-text: #56635f;
-    c-accent2: #e69875;
-}
 /* ── Rofi Theme ──────────────────────────────
    °˖* ૮(  • ᴗ ｡)っ🍸
    ─────────────────────────────────────────── */
@@ -22,8 +11,8 @@
 }
 
 window {
-  width: 750px;
-  height: 625px;
+  width: 450px;
+  height: 350px;
   location: center;
   blur: true;
   border: 2px;
@@ -31,7 +20,7 @@ window {
   border-color: @c-accent;
   background-color: transparent;
   padding: 0px;
-  margin: 30px 50px;
+  margin: 0px;
 }
 
 /* ── Layout ──────────────────────────────── */
@@ -44,7 +33,7 @@ mainbox {
 
 borderbox {
   orientation: horizontal;
-  children: [ "imagebox", "contentbox" ];
+  children: [ "contentbox" ];
   padding: 0px;
   spacing: 0px;
   border-radius: 3px;
