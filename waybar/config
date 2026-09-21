@@ -8,7 +8,8 @@
     "modules-left": [
         "custom/launcher",
         "hyprland/workspaces",
-        "hyprland/window"
+        // "mpris",
+        "custom/cava"
     ],
 
     "modules-center": [
@@ -36,17 +37,17 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "1": " ",
-            "2": " ",
-            "3": " ",
-            "4": " ",
-            "5": " ",
+           "1": "[1]",
+            "2": "[2]",
+            "3": "[3]",
+            "4": "[4]",
+            "5": "[5]",
             "urgent": " ",
             "active": " ",
             "default": " "
         },
         "sort-by-number": true,
-        "active-only": false,
+        "active-only": true,
         "all-outputs": false,
         "on-click": "activate",
         "disable-scroll": false,
@@ -83,6 +84,36 @@
         "format": "{usage}% 󰍛",
         "on-click": "alacritty -e btop",
         "tooltip-format": "CPU: {usage}%  Load: {load}"
+    },
+
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "max-length": 40,
+        "player-icons": {
+            "default": "",
+            "spotify": "",
+            "firefox": "",
+            "mpv": "",
+            "vlc": "󰕼"
+        },
+        "status-icons": {
+            "playing": "",
+            "paused": "",
+            "stopped": ""
+        },
+        "dynamic-order": ["title", "artist"],
+        "dynamic-separator": " - ",
+        "on-click": "play-pause",
+        "on-click-right": "next",
+        "on-click-middle": "previous"
+    },
+
+    "custom/cava": {
+        "exec": "~/.config/waybar/cava.sh",
+        "format": "{}",
+        "tooltip": false,
+        "restart-interval": 1
     },
 
     "network": {
@@ -145,7 +176,7 @@
     },
 
     "custom/power": {
-        "format": "󰐥 ",
+        "format": " 󰐥 ",
         "on-click": "~/.config/hypr/scripts/powermenu.sh",
         "tooltip": false
     }
